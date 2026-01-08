@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bluebellGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#a8d0ff"/>
+      <stop offset="100%" stop-color="#6aa7ff"/>
+    </linearGradient>
+    <radialGradient id="bluebellCenter" cx="50%" cy="60%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cfe6ff" />
+    </radialGradient>
+  </defs>
+  <g>
+    <path d="M60 28 C72 28, 86 44, 72 64 C90 62, 92 82, 60 86 C28 82, 30 62, 48 64 C34 44, 48 28, 60 28 Z" fill="url(#bluebellGrad)" stroke="#5f9bff" stroke-width="0.9"/>
+    <ellipse cx="60" cy="60" rx="10" ry="8" fill="url(#bluebellCenter)"/>
+    <rect x="58" y="86" width="4" height="22" rx="2" fill="#3e8b5a"/>
+  </g>
+</svg>
