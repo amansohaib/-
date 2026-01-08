@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Rukhsar 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="wish-box">
+      <h1>🎂 Happy Birthday Rukhsar 💕</h1>
+      <div class="countdown-wrap">
+        <h2 id="countdown"></h2>
+        <p class="countdown-subline">Every second brings me closer to your smile</p>
+        <div class="sparkles" aria-hidden="true">✨ ✨</div>
+      </div>
+      <p class="hero-quote">
+I wasn’t sure how to say this properly, so I made this page instead.
+</p>
+
+      <div class="phrase-row">
+        <div class="reveal-wrap">
+          <button id="revealBtn" class="reveal-btn" aria-controls="revealMessage" aria-expanded="false">💖</button>
+          <div id="revealMessage" class="reveal-message" role="dialog" aria-modal="true" aria-hidden="true">
+              <div class="reveal-inner">
+                <button class="reveal-close" aria-label="Close message">✕</button>
+                <div class="poem-wrap">
+                  <p>Sharmindagi hai humko bohot, ke hum mile tumhe.<br>
+                  Tum sar-ba-sar khushi the, magar gham mile tumhe.</p>
+
+                  <p>Tum ko jahaan-e-shauq-o-tamanna mein kya mila?<br>
+                  Hum bhi mile, toh darham-o-barham mile tumhe.</p>
+
+                  <p>Tum ne hamare dil mein bohot din safar kiya,<br>
+                  Sharminda hoon ke us safar mein gham mile tumhe.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <p class="phrase">Still learning how to love you better💙</p>
+      <p class="phrase">Can’t wait to celebrate a day with you 🌙</p>
+    </div>
+
+    <div class="decorations">
+      <img src="images/balloons.svg" alt="Balloons" class="balloons">
+      <img src="images/cake.svg" alt="Cake" class="cake">
+      <div class="stickers">
+        <img src="images/heart.svg" alt="Heart sticker" class="sticker heart" aria-hidden="true">
+        <img src="images/star.svg" alt="Star sticker" class="sticker star" aria-hidden="true">
+        <img src="images/pocky.svg" alt="Pocky sticker" class="sticker pocky" aria-hidden="true">
+      </div>
+      <!-- emoji legend removed as requested -->
+      <div class="flowers" aria-hidden="true">
+        <img src="images/flower-hydrangea.svg" alt="hydrangea" class="flower hydrangea">
+        <img src="images/flower-rose.svg" alt="rose" class="flower rose">
+        <img src="images/flower-tulip.svg" alt="tulip" class="flower tulip">
+        <img src="images/flower-blossom.svg" alt="cherry blossom" class="flower blossom">
+        <img src="images/flower-bluebell.svg" alt="bluebell" class="flower bluebell">
+        <img src="images/flower-daisy.svg" alt="daisy" class="flower daisy">
+        <img src="images/flower-sun.svg" alt="sunflower" class="flower sun">
+      </div>
+    </div>
+  </div>
+
+  <section class="special-section" aria-labelledby="special-heading">
+    <div class="special-card">
+      <h3 id="special-heading">Why you’re special to me</h3>
+      <ul>
+        <li>You understand me even when I don’t explain myself properly</li>
+        <li>You make things feel lighter on days when everything feels too much</li>
+        <li>Being with you feels safe, like I don’t have to pretend or hold back</li>
+        <li>You’re someone I keep choosing, and it never feels forced</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+  Made with 💖 Isra S — just for you
+  </footer>
+
+
+
+
+
+  <script>
+    const targetDate = new Date("Feb 4, 2026 00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    // create confetti container
+    const confettiContainer = document.createElement('div');
+    confettiContainer.className = 'confetti';
+    document.body.appendChild(confettiContainer);
+
+    function showConfetti() {
+      const count = 36;
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement('i');
+        el.textContent = ['💖','❣️','💗','✨','🎉'][Math.floor(Math.random()*5)];
+        const size = Math.floor(Math.random() * 20) + 18;
+        el.style.left = Math.random() * 100 + '%';
+        el.style.fontSize = size + 'px';
+        el.style.opacity = (0.7 + Math.random() * 0.3).toString();
+        el.style.animationDuration = (3 + Math.random() * 3) + 's';
+        el.style.top = '-6vh';
+        confettiContainer.appendChild(el);
+      }
+      // remove after animation
+      setTimeout(() => confettiContainer.innerHTML = '', 7000);
+    }
+
+    function celebrateLayout(){
+      document.body.classList.add('celebration');
+      const wishBox = document.querySelector('.wish-box');
+      wishBox.innerHTML = `
+        <h1>🎉 Happy Birthday Rukhsar 💖</h1>
+        <div class="celebration-content">
+          <p class="celebration-text">Today is all about you — enjoy every moment!</p>
+          <div class="celebration-actions">
+            <button id="againConfetti">Celebrate Again 🎊</button>
+          </div>
+        </div>
+      `;
+      const again = document.getElementById('againConfetti');
+      if(again){
+        again.addEventListener('click', () => showConfetti());
+      }
+    }
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance >= 0) {
+        countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s left 💝`;
+      } else {
+        clearInterval(timer);
+        countdownEl.innerHTML = "🎈 It's your day, Rukhsar! Happy Birthday 💖";
+        showConfetti();
+        celebrateLayout();
+      }
+    }, 1000);
+  </script>
+  <script>
+    // randomize flower transforms slightly to break uniformity and add realism
+    (function randomizeFlowers(){
+      const flowers = document.querySelectorAll('.flower');
+      flowers.forEach((f, i) => {
+        const r = (Math.random() * 22) - 11; // -11..11deg
+        const s = 0.92 + Math.random() * 0.18; // 0.92..1.10
+        const tx = (Math.random() * 8) - 4; // -4..4px
+        f.style.transform = `rotate(${r}deg) scale(${s}) translateX(${tx}px)`;
+        // stagger sway animation slightly
+        f.style.animationDelay = (Math.random() * 1.2) + 's';
+      });
+    })();
+  </script>
+  <script>
+    (function revealMessage(){
+      const btn = document.getElementById('revealBtn');
+      const dialog = document.getElementById('revealMessage');
+      const close = dialog ? dialog.querySelector('.reveal-close') : null;
+      if(!btn || !dialog) return;
+
+      function open(){
+        dialog.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+        dialog.__returnFocus = document.activeElement;
+        close && close.focus();
+      }
+      function closeDialog(){
+        dialog.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+        if(dialog.__returnFocus) dialog.__returnFocus.focus();
+      }
+
+      // Click / keyboard activation for touch devices
+      btn.addEventListener('click', open);
+      btn.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      close && close.addEventListener('click', closeDialog);
+      document.addEventListener('keydown', (e)=> { if(e.key === 'Escape' && dialog.getAttribute('aria-hidden') === 'false') closeDialog(); });
+
+      // Hover behaviour attached to the specific button (not whole legend)
+      btn.addEventListener('mouseenter', ()=>{
+        dialog.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+      });
+      btn.addEventListener('mouseleave', ()=>{
+        // small timeout lets moving into the dialog keep it open
+        setTimeout(()=>{
+          if(!dialog.matches(':hover')){
+            dialog.setAttribute('aria-hidden','true');
+            btn.setAttribute('aria-expanded','false');
+          }
+        }, 80);
+      });
+
+      dialog.addEventListener('mouseleave', ()=>{
+        dialog.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+      });
+      dialog.addEventListener('mouseenter', ()=>{
+        dialog.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+      });
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
